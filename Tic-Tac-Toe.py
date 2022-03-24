@@ -30,13 +30,14 @@ class Tic_Tac_Toe:
                     if cell_number in ['11','12','13','21','22','23','31','32','33']:
                         r = int(cell_number[0]) - 1
                         c = int(cell_number[1]) - 1
-                        break                  
+                        break        
+                # Assigning players alternately with 'o' and 'x'
                 if counter % 2 == 0:
                     self.grid[r][c] = 'x' 
                 else:
                     self.grid[r][c] = 'o'
                 for cell in range(0,3):
-                    # Checks rows :
+                    # Checking rows :
                     if self.grid[cell][0] == 'x' and self.grid[cell][1] == 'x' and self.grid[cell][2] == 'x':
                         winner = 'x'
                         self.is_end = True
@@ -45,7 +46,7 @@ class Tic_Tac_Toe:
                         winner = 'o'
                         self.is_end = True
                         break
-                    # Checks columns:
+                    # Checking columns:
                     elif self.grid[0][cell] == 'x' and self.grid[1][cell] == 'x' and self.grid[2][cell] == 'x':
                         winner = 'x'
                         self.is_end = True
@@ -58,6 +59,7 @@ class Tic_Tac_Toe:
                         winner = 'x'
                         self.is_end = True
                         break
+                # Checking diagonals
                 if  self.grid[0][0] == 'o' and self.grid[1][1] == 'o' and self.grid[2][2] == 'o':
                     winner = 'o'
                     self.is_end = True
@@ -70,6 +72,7 @@ class Tic_Tac_Toe:
                     winner = 'o'
                     self.is_end = True
                     break
+                # End of the game
                 if self.is_end == True:
                     self.print_grid(counter)
                     print('Congratulations !')

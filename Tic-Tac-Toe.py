@@ -8,7 +8,6 @@ class Tic_Tac_Toe:
         self.rows = columns = len(self.grid)
         self.cells = self.rows * columns
         self.is_end = False
-        self.players = ['x','o']
 
     def print_grid(self, round):
         print('{} {}{} {}'.format(''.ljust(7,'-'), 'ROUND NO.', str(round), ''.rjust(7,'-')))
